@@ -1,5 +1,52 @@
+import java.util.Scanner;
 public class KelompokJobsheet13 {
+    static String[][] daftarPrestasi = new String[100][5]; 
+    static int jumlahData = 0; 
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("hii");
+       
+    
     }
+    public static void tambahPrestasi() {
+        if (jumlahData >= 100) {
+            System.out.println("Data penuh! Tidak dapat menambah data lagi.");
+            return;
+        }
+
+        System.out.println("=== TAMBAH DATA PRESTASI ===");
+        System.out.print("Nama: ");
+        String nama = scanner.nextLine();
+        System.out.print("NIM: ");
+        String nim = scanner.nextLine();
+        System.out.print("Jenis: ");
+        String jenis = scanner.nextLine();
+        System.out.print("Tingkat (Lokal/Nasional/Internasional): ");
+        String tingkat = scanner.nextLine();
+        int tahun = 0;
+
+        while (true) {
+            System.out.print("Tahun: ");
+            
+            try {
+                tahun = Integer.parseInt(scanner.nextLine()); // Mencoba mengonversi input menjadi integer
+                if (tahun < 2010) {
+                    System.out.println("Tahun tidak valid. Tahun harus >= 2010. Coba lagi.");
+                } else {
+                    break; // Keluar dari loop jika tahun valid
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Input tahun tidak valid, harap masukkan angka.");
+            }
+        }
+
+        daftarPrestasi[jumlahData][0] = nama;
+        daftarPrestasi[jumlahData][1] = nim;
+        daftarPrestasi[jumlahData][2] = jenis;
+        daftarPrestasi[jumlahData][3] = tingkat;
+        daftarPrestasi[jumlahData][4] = String.valueOf(tahun);
+        jumlahData++;
+
+        System.out.println("Data berhasil ditambahkan!");
+    }
+
 }
