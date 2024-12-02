@@ -60,4 +60,29 @@ public class KelompokJobsheet13 {
         }
     }
 
+    public static void analisisPrestasi() {
+        System.out.println("=== ANALISIS PRESTASI BERDASARKAN JENIS ===");
+        if (jumlahData == 0) {
+            System.out.println("Belum ada data prestasi.");
+            return;
+        }
+
+        System.out.print("Masukkan jenis prestasi untuk analisis: ");
+        String jenisDicari = scanner.nextLine();
+        System.out.print("Masukkan tahun prestasi untuk analisis: ");
+        String tahunDicari = scanner.nextLine();
+        System.out.println("=========================== ANALISIS PRESTASI ===========================");
+
+        for (int i = 0; i < jumlahData; i++) {
+            if (daftarPrestasi[i][2].equalsIgnoreCase(jenisDicari)) {
+                if (daftarPrestasi[i][4].equalsIgnoreCase(tahunDicari)) {
+                    System.out.println("Nama: " + daftarPrestasi[i][0] + " | NIM: " + daftarPrestasi[i][1] + " | Jenis: " + daftarPrestasi[i][2] + " | Tingkat: " + daftarPrestasi[i][3] + " | Tahun: " + daftarPrestasi[i][4]);
+                } else {
+                    System.out.println("Tidak ada data prestasi dengan tahun tersebut");
+                }
+            } else {
+                System.out.println("Tidak ada data prestasi dengan jenis tersebut.");
+            }
+        }
+    }
 }
