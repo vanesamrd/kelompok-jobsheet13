@@ -48,5 +48,16 @@ public class KelompokJobsheet13 {
 
         System.out.println("Data berhasil ditambahkan!");
     }
+    
+    public static void tampilkanSemuaPrestasi() {
+        System.out.println("=== DAFTAR SEMUA PRESTASI ===");
+        if (jumlahData==0) {
+            System.out.println("Belum ada data prestasi");
+        } else {
+            for (int i = 0; i < jumlahData; i++) {
+                System.out.println("Nama: " + daftarPrestasi[i][0] + " | NIM: " + daftarPrestasi[i][1] + " | Jenis: " + daftarPrestasi[i][2] + " | Tingkat: " + daftarPrestasi[i][3] +" | Tahun: " + daftarPrestasi[i][4]);
+            }
+        }
+    }
 
 }
